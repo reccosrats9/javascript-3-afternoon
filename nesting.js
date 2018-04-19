@@ -49,6 +49,17 @@ var employees = [
     2. If the employee's first name is Lorie, change her department to 'HR'.
     3. Return the updated employee array.
 */
+employeeUpdater = ()=> {
+  var newEmp= employees.slice()
+  for(let i=0;i<newEmp.length;i++){
+    if(newEmp[i].firstName==="Theo"){
+      newEmp.splice(i,1)
+      i--
+    }
+    if(newEmp[i].firstName==="Lorie"){newEmp[i].department="HR"}
+  }
+  return newEmp;
+}
 
 //Code Here
 
@@ -67,6 +78,14 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     2. Use nested for loops to check for duplicate numbers, and then remove the duplicates from the array.
     3. Return the updated array.
 */
+removeDuplicates = ()=>
+  workplaceAccidents.reduce((a,val)=>{
+    if(!a.includes(val)){
+      a.push(val);
+    }
+    return a;
+  },[])
+  
 
 //Code Here
 
@@ -97,8 +116,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity= cat.catFriends[0].activities[1];
+var fluffy2ndFriend= cat.catFriends[1].name;
 
 
 
@@ -138,6 +157,9 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
+recordCleaner= ()=> myCar.accidents.forEach((val,ind)=>
+ myCar.accidents[ind].atFaultForAccident= false)
+
 //Code Here
 
 
@@ -156,7 +178,7 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
         If the number is even, replace it with 'even'.
     4. Return the modified numsArr.
 */
-
+looper=()=>numsArr.map(val =>val.map(val=> {if(val%2===0){return 'even'} else{return 'odd'}}))
 //Code Here
 
 
